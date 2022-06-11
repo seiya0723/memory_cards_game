@@ -120,6 +120,15 @@ window.addEventListener("load" , function (){
             data["id"]      = id;
             data["card"]    = CARD_DATA[int_id];
 
+
+            //既に選んだ事のあるものが選択された時、SELECTEDに追加しない
+            for (let s of SELECTED){
+                if (s["card"] == CARD_DATA[int_id]){
+                    return false;
+                }
+            }
+            
+
             SELECTED.push(data);
 
 
